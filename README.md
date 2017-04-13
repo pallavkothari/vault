@@ -7,16 +7,16 @@ Quick app to run a [vault](https://www.vaultproject.io) server in a heroku dyno
 
 ## Setup 
 ```bash 
-heroku apps:create -b https://github.com/pallavkothari/heroku-buildpack-vault.git --region us -b https://github.com/pallavkothari/heroku-buildpack-nginx
-heroku ps:scale web=1
+psql $(heroku config:get DATABASE_URL) -q -f vault-kv.sql
+
+brew install vault vault-cli
+
+export VAULT_ADDR='https://<your-vault>.herokuapp.com'
+vault init
+
 ```
 
 
 ## Environment variables
 - VAULT-UNSEAL_KEY optional; to automatically unseal the vault on restarts. 
 
-## Local usage
-```bash 
-brew install vault vault-cli
-heroku local 
-```

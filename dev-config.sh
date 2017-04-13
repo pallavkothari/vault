@@ -5,8 +5,8 @@ set -e
 cat << EOF
 disable_mlock = true
 
-storage "file" {
-  path = "/mnt/vault/data"
+storage "postgresql" {
+  connection_url = "${DATABASE_URL:?}"
 }
 
 listener "tcp" {
