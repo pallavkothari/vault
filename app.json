@@ -1,0 +1,23 @@
+{
+  "name": "vault server",
+  "description": "deploy a dev vault server to heroku",
+  "repository": "https://github.com/pallavkothari/vault",
+  "logo": "https://github.com/pallavkothari/vault/lock.png",
+  "keywords": ["vault", "server"],
+  "buildpacks": [
+    {
+      "url": "https://github.com/pallavkothari/heroku-buildpack-vault.git"
+    },
+    {
+      "url": "https://github.com/pallavkothari/heroku-buildpack-nginx"
+    }
+  ],
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.5"
+      }
+    }
+  ]
+}
