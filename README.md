@@ -12,7 +12,16 @@ psql $(heroku config:get DATABASE_URL) -q -f vault-kv.sql
 brew install vault vault-cli
 
 export VAULT_ADDR='https://<your-vault>.herokuapp.com'
-vault init
+
+vault init     #### stash the output of this command in a safe place!
+vault unseal
+vault unseal
+vault unseal    # unseal with 3 keys
+vault status
+
+export VAULT_TOKEN=<ROOT TOKEN FROM INIT>
+vault write secret/hello value=world
+vault read secret/hello
 
 ```
 
