@@ -7,7 +7,6 @@ Quick app to run a [vault](https://www.vaultproject.io) server in a heroku dyno
 
 ## Setup 
 ```bash 
-heroku ps:resize web=1:Hobby # resize to get heroku ACM 
 
 psql $(heroku config:get DATABASE_URL) -q -f vault-kv.sql
 

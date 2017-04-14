@@ -20,7 +20,13 @@
       }
     }
   ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "hobby"
+    }
+  },
   "scripts": {
-    "postdeploy": "psql $(heroku config:get DATABASE_URL) -q -f vault-kv.sql"
+    "postdeploy": "echo ${DATABASE_URL} && psql ${DATABASE_URL} -q -f vault-kv.sql"
   }
 }
