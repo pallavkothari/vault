@@ -19,5 +19,8 @@
         "version": "9.5"
       }
     }
-  ]
+  ],
+  "scripts": {
+    "postdeploy": "psql $(heroku config:get DATABASE_URL) -q -f vault-kv.sql"
+  }
 }
