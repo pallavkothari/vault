@@ -5,3 +5,7 @@ path "sys/*" {
 path "secret/*" {
   policy = "read"
 }
+
+path "aws/*" {
+  policy = "read"
+}

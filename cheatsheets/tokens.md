@@ -1,6 +1,9 @@
 ## tokens
 
 ```bash
+# set up the required policies first
+vault policy-write readonly readonly-policy.hcl
+
 # using the cli
 vault token-create -policy="readonly" -ttl="1h" -renewable=true -use-limit=3
 vault token-create -policy="readonly" -ttl="1h" -renewable=true -use-limit=3 -format=json | jq -r '.auth.client_token'
