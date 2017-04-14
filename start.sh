@@ -6,7 +6,7 @@ echo "starting vault..."
 
 
 ./dev-config.sh > /tmp/dev.json
-./unsealer.sh &
+# ./unsealer.sh &
 
 vault server -config=/tmp/dev.json
 
