@@ -12,8 +12,8 @@ brew install vault vault-cli jq
 export VAULT_APP=<APP NAME YOU PICKED>
 export VAULT_ADDR="https://${VAULT_APP}.herokuapp.com"
 
-vault operator init #### stash the output of this command in a safe place!
-vault unseal        # do this step 3x with different keys
+vault operator init    #### stash the output of this command in a safe place!
+vault operator unseal  # do this step 3x with different keys
 vault status
 
 export VAULT_TOKEN=<ROOT TOKEN FROM INIT>
